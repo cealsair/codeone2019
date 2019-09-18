@@ -47,8 +47,8 @@ In lieu of an existiung Java project, we are going to use a Thorntail project ex
   cp -p src/main/resources/META-INF/microprofile-config.properties src/main/resources/application.properties
   
 13. Open src/main/resources/application.properties in your favorite editor and append the following two lines to it:
-
+```
     quarkus.ssl.native=true
     quarkus.smallrye-jwt.enabled=false
-
+```
 14. 
