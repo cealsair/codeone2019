@@ -122,11 +122,30 @@ Service service;
 import javax.ws.rs.core.Response;
 ```
 and replace the line:
-```private Counter counter;
+```
+private Counter counter;
 ```
 with
 ```
 Counter counter;
 ```
-5. 
+5. Edit the file "src/main/java/com/example/demo/secure/MPJWTToken.java" and replace its entire content with the content from the following link.
 
+6. Edit the file "src/main/java/com/example/demo/secure/TestSecureController.java" and replace its entire content with the content from the following link.
+
+7. Open pom.xml (located at ./Qproj4MP/src/pom.xml) in your favorite editor and add the following dependencies to it (ensure to insert these lines within the <dependencies> block in the pom.xml):
+```
+<dependency>
+  <groupId>io.vertx</groupId>
+  <artifactId>vertx-auth-jwt</artifactId>
+  <version>3.8.1</version>
+</dependency>
+```
+8. At this point, you are ready to compile to native. Enter the following command in your Terminal window:
+```
+./mvnw package -Pnative
+```
+9. Finally, to run the executable, enter the following command:
+```
+./target/demo-1.0-SNAPSHOT-runner -Dinjected.value="hi" -Dvalue="hola"
+```
