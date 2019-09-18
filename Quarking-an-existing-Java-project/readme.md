@@ -93,7 +93,7 @@ cp -p ../demo/service-b/src/main/resources/META-INF/MP-JWT-SIGNER ../demo/servic
 ```
 19. And to run the executable JAR file, enter:
 ```
-target/demo-1.0-SNAPSHOT-runner.jar
+java -jar target/demo-1.0-SNAPSHOT-runner.jar
 ```
 
 ### Compiling to native
