@@ -7,45 +7,45 @@ In lieu of an existiung Java project, we are going to use a Thorntail project ex
 1. Open a Terminal window on your laptop (for Windows users, please refer to the following [link](https://github.com/eclipse/microprofile-starter/blob/master/src/main/resources/REST-README.md#powershell-examples) for appropriate syntax)
 2. Change directory to one of your choice (I used $HOME/Downloads)
 3. Enter the following command to generate a sample MicroProfile project for Thorntail
-
+```
   curl -O -J 'https://start.microprofile.io/api/project?supportedServer=THORNTAIL_V2&mpVersion=MP22'
-
+```
 4. The previous command should download a file name demo.zip to your local directory. Unzip the file. This will create a subdirectory called "demo"
 5. Create a sub-directory called Qproj4MP by entering the following command:
-
+```
   mkdir Qproj4MP
-  
+```
 6. Change directory into Qproj4MP
-
+```
   cd Qproj4MP
-  
+```  
 7. Enter the following command to generate an empty Quarkus project with all the necessary MicroProfile extensions:
-
+```
   mvn io.quarkus:quarkus-maven-plugin:0.22.0:create \
     -DprojectGroupId=com.example \
     -DprojectArtifactId=demo \
     -Dextensions="smallrye-health, smallrye-metrics, smallrye-openapi, smallrye-fault-tolerance, smallrye-jwt, resteasy, rest-client, resteasy-jsonb"
-    
+```    
 8. Delete the "src" sub-directory for the newly created Quarkus project:
-
+```
   rm -rf ./src
-
+```
 9. Copy the contents of the service-a "src" directory from the Thorntail project into the newly created Quarkus project:
-
+```
   cp -pR ../demo/service-a/src .
-  
+```  
 10. Quarkus expects web app files to reside under the META-INF/resources sub-directory which did not exist in the Thorntail project that you just copied to the newly created Quearkus project directory. So create one by entering the following command:
-
+```
   mkdir src/main/resources/META-INF/resources
-  
+``` 
 11. Copy the index.html file to the newly created resources sub-directory:
-
+```
   cp src/main/webapp/index.html src/main/resources/META-INF/resources
-  
+```  
 12. Quarkus also expects the application.properties file to reside under the META-INF/resources sub-directory so copy the microprofile-config.properties file to the correct sub-directory:
-
+```
   cp -p src/main/resources/META-INF/microprofile-config.properties src/main/resources/application.properties
-  
+```  
 13. Open src/main/resources/application.properties in your favorite editor and append the following two lines to it:
 ```
     quarkus.ssl.native=true
