@@ -129,7 +129,7 @@ with
 ```
 Counter counter;
 ```
-5. Edit the file "src/main/java/com/example/demo/secure/MPJWTToken.java" and replace its entire content with the content from the following link.
+5. Edit the file "src/main/java/com/example/demo/secure/MPJWTToken.java" and replace its entire content with the content from the following [link](https://raw.githubusercontent.com/cealsair/codeone2019/master/Quarking-an-existing-Java-project/MPJWTToken.java).
 
 6. Edit the file "src/main/java/com/example/demo/secure/TestSecureController.java" and replace its entire content with the content from the following link.
 
