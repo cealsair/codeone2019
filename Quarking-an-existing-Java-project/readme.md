@@ -50,8 +50,8 @@ In lieu of an existing Java project, we are going to use a Thorntail project exa
 ```  
 13. Open src/main/resources/application.properties in your favorite editor and append the following two lines to it:
 ```
-    quarkus.ssl.native=true
-    quarkus.smallrye-jwt.enabled=false
+quarkus.ssl.native=true
+quarkus.smallrye-jwt.enabled=false
 ```
 14. Open pom.xml (located at ./Qproj4MP/src/pom.xml) in your favorite editor and add the following dependencies to it (ensure to insert these lines within the <dependencies> block in the pom.xml):
 ```
