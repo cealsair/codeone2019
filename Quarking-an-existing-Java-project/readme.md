@@ -83,6 +83,7 @@ demo/service-b/readme.md (from step 4 above) to build and run service-b. Once se
 running, the JWT Propagation and REST Client calls should work. For JWT Propagation to properly work,
 you will need to copy the file demo/service-b/src/main/resources/META-INF/MP-JWT-SIGNER and rename it
 to demo/service-b/src/main/resources/META-INF/publicKey.pem. To do this, enter the following command:
+
 cp -p ../demo/service-b/src/main/resources/META-INF/MP-JWT-SIGNER ../demo/service-b/src/main/resources/META-INF/publicKey.pem
 ```
 17. At this point, you can stop the application running in dev mode by entering CTRL-C at the Terminal window in which it has been running
@@ -96,4 +97,36 @@ target/demo-1.0-SNAPSHOT-runner.jar
 ```
 
 ### Compiling to native
+
+To compile the application to native code, we need to make some more changes to the source code.
+
+1. Ensure you are still in the directory "Qproj4MP". If not, please change directory to it.
+2. Edit the file "src/main/java/com/example/demo/config/ConfigTestController.java" in your favorite editor. Replace the line:
+```
+private String injectedValue;
+```
+with
+```
+String injectedValue;
+```
+3. Edit file file "src/main/java/com/example/demo/client/ClientController.java" in your favorite editor. Replace the line:
+```
+private Service service;
+```
+with
+```
+Service service;
+```
+4. Edit the file "src/main/java/com/example/demo/metric/MetricController.java" in your favorite editor. Delete the following line:
+```
+import javax.ws.rs.core.Response;
+```
+and replace the line:
+```private Counter counter;
+```
+with
+```
+Counter counter;
+```
+5. 
 
