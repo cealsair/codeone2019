@@ -168,7 +168,7 @@ with
   <additionalBuildArgs>-H:IncludeResources=privateKey.pem</additionalBuildArgs>
 </configuration>
 ```
-8. Edit the file "src/main/resources/privateKey.pem" and replace its entire content with the content from the following [link]() 
+8. Edit the file "src/main/resources/privateKey.pem" and replace its entire content with the content from the following [link](https://raw.githubusercontent.com/cealsair/codeone2019/master/Quarking-an-existing-Java-project/privateKey.pem) 
 9. At this point, you are ready to compile to native. Enter the following command in your Terminal window:
 ```
 ./mvnw package -Pnative
