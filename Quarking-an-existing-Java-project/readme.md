@@ -223,6 +223,6 @@ mvn clean package
 ```
 10. To run the executable JAR for service-b, enter:
 ```
-java -Dquarkus.http.port=8180 -jar target/demoQ-runner.jar
+java -Dquarkus.http.port=8180 -jar target/demo-1.0-SNAPSHOT-runner.jar
 ```
-11. 
+11. At this point, you can try the JWT Propagation option from the web app on http://localhost:8080/index.html to verify that it works.
