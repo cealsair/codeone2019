@@ -181,8 +181,10 @@ with
   
 You will notice that the call the JWT Propagation use case fails when calling service-b. To make service-b work with the natively-compiled service-a, you will need to make some modifications to service-b. The following steps summarize the updates to make service-b work with the natively compiled service-a. Open a second Terminal window and execute the following steps from it.
 
-1. In the same directory where you created "Qproj4MP", create another directory called "Qproj4MPb"
-
+1. In the same directory where you created "Qproj4MP", create another directory called "Qproj4MPb" by entering the following command at the second Terminal window:
+```
+mkdir Qproj4MPb
+```
 2. Change directory into Qproj4MPb
 ```
   cd Qproj4MPb
