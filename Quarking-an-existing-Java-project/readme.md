@@ -177,9 +177,9 @@ with
 ```
 ./target/demo-1.0-SNAPSHOT-runner -Dinjected.value="hi" -Dvalue="hola"
 ```
-#### Coverting service-b to work with Quarkus
+#### Converting service-b to work with Quarkus
   
-You will notice that the call the JWT Propagation use case fails when calling service-b. To make service-b work with the natively-compiled service-a, you will need to make some modifications to service-b. The following steps summarize the updates to make service-b work with the natively compiled service-a.
+You will notice that the call the JWT Propagation use case fails when calling service-b. To make service-b work with the natively-compiled service-a, you will need to make some modifications to service-b. The following steps summarize the updates to make service-b work with the natively compiled service-a. Open a second Terminal window and execute the following steps from it.
 
 1. In the same directory where you created "Qproj4MP", create another directory called "Qproj4MPb"
 
@@ -214,9 +214,13 @@ ClaimValue<String> custom;
 ```
 mkdir src/main/resources/META-INF/resources
 ```
-8. Create the file "src/main/resources/META-INF/resources/privateKey.pem" and paste into it the content from the following [link]() 
+8. Create the file "src/main/resources/META-INF/resources/privateKey.pem" and paste into it the content from the following [link](https://raw.githubusercontent.com/cealsair/codeone2019/master/Quarking-an-existing-Java-project/publicKey.pem) 
 9. At this point, you are ready to build service-b. Enter the following command:
 ```
-
+mvn clean package
 ```
-10.
+10. To run the executable JAR for service-b, enter:
+```
+java -Dquarkus.http.port=8180 -jar target/demoQ-runner.jar
+```
+11. 
