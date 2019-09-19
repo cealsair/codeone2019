@@ -168,11 +168,12 @@ with
   <additionalBuildArgs>-H:IncludeResources=privateKey.pem</additionalBuildArgs>
 </configuration>
 ```
-8. At this point, you are ready to compile to native. Enter the following command in your Terminal window:
+8. Edit the file "src/main/resources/privateKey.pem" and replace its entire content with the content from the following [link]() 
+9. At this point, you are ready to compile to native. Enter the following command in your Terminal window:
 ```
 ./mvnw package -Pnative
 ```
-9. Finally, to run the executable, enter the following command:
+10. Finally, to run the executable, enter the following command:
 ```
 ./target/demo-1.0-SNAPSHOT-runner -Dinjected.value="hi" -Dvalue="hola"
 ```
