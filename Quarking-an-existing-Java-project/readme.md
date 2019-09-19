@@ -177,3 +177,46 @@ with
 ```
 ./target/demo-1.0-SNAPSHOT-runner -Dinjected.value="hi" -Dvalue="hola"
 ```
+#### Coverting service-b to work with Quarkus
+  
+You will notice that the call the JWT Propagation use case fails when calling service-b. To make service-b work with the natively-compiled service-a, you will need to make some modifications to service-b. The following steps summarize the updates to make service-b work with the natively compiled service-a.
+
+1. In the same directory where you created "Qproj4MP", create another directory called "Qproj4MPb"
+
+2. Change directory into Qproj4MPb
+```
+  cd Qproj4MPb
+```  
+3. Enter the following command to generate an empty Quarkus project with all the necessary MicroProfile extensions:
+```
+  mvn io.quarkus:quarkus-maven-plugin:0.21.2:create \
+    -DprojectGroupId=com.example \
+    -DprojectArtifactId=demo \
+    -Dextensions="smallrye-health, smallrye-metrics, smallrye-openapi, smallrye-fault-tolerance, smallrye-jwt, resteasy, rest-client, resteasy-jsonb"
+```    
+4. Delete the "src" sub-directory for the newly created Quarkus project:
+```
+  rm -rf ./src
+```
+5. Copy the contents of the service-a "src" directory from the Thorntail project into the newly created Quarkus project:
+```
+  cp -pR ../demo/service-b/src .
+```
+6. Edit the file "src/main/java/com/example/demo/secure/ProtectedController.java" in your favorite editor. Replace the line:
+```
+private ClaimValue<String> custom;
+```
+with
+```
+ClaimValue<String> custom;
+```
+7. Create a resources sub-directory under META-INF as follows:
+```
+mkdir src/main/resources/META-INF/resources
+```
+8. Create the file "src/main/resources/META-INF/resources/privateKey.pem" and paste into it the content from the following [link]() 
+9. At this point, you are ready to build service-b. Enter the following command:
+```
+
+```
+10.
