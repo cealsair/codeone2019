@@ -80,8 +80,8 @@ The page will show the landing page for the example code for service-a generated
 NOTE: the JWT Propagation and REST Client calls will fail because you don't have a service-b up and
 running at this point. If you'd like to have a service-b, follow the instructions found in
 demo/service-b/readme.md (from step 4 above) to build and run service-b. Once service-b is up and
-running, the JWT Propagation and REST Client calls should work. For JWT Propagation to properly work,
-you will need to copy the file demo/service-b/src/main/resources/META-INF/MP-JWT-SIGNER and rename it
+running, the JWT Propagation and REST Client calls should work. If JWT Propagation does not work,
+you may need to copy the file demo/service-b/src/main/resources/META-INF/MP-JWT-SIGNER and rename it
 to demo/service-b/src/main/resources/META-INF/publicKey.pem. To do this, enter the following command:
 
 cp -p ../demo/service-b/src/main/resources/META-INF/MP-JWT-SIGNER ../demo/service-b/src/main/resources/META-INF/publicKey.pem
