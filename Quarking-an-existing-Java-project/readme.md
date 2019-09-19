@@ -133,7 +133,7 @@ Counter counter;
 
 6. Edit the file "src/main/java/com/example/demo/secure/TestSecureController.java" and replace its entire content with the content from the following [link](https://raw.githubusercontent.com/cealsair/codeone2019/master/Quarking-an-existing-Java-project/TestSecureController.java).
 
-7. Open pom.xml (located at ./Qproj4MP/src/pom.xml) in your favorite editor and replace the following dependecies:
+7. Open pom.xml (located at ./Qproj4MP/src/pom.xml) in your favorite editor and replace the following dependencies:
 ```
 <dependency>
   <groupId>org.bouncycastle</groupId>
@@ -153,6 +153,20 @@ with (ensure these lines within the <dependencies> block in the pom.xml):
   <artifactId>vertx-auth-jwt</artifactId>
   <version>3.8.1</version>
 </dependency>
+```
+Also, in the pom.xml, replace the following configuration parameter:
+```
+<configuration>
+  <enableHttpUrlHandler>true</enableHttpUrlHandler>
+</configuration>
+```
+with
+```
+<configuration>
+  <enableHttpUrlHandler>true</enableHttpUrlHandler>
+  <additionalBuildArgs>-H:Log=registerResource:</additionalBuildArgs>
+  <additionalBuildArgs>-H:IncludeResources=privateKey.pem</additionalBuildArgs>
+</configuration>
 ```
 8. At this point, you are ready to compile to native. Enter the following command in your Terminal window:
 ```
