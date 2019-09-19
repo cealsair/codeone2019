@@ -133,7 +133,20 @@ Counter counter;
 
 6. Edit the file "src/main/java/com/example/demo/secure/TestSecureController.java" and replace its entire content with the content from the following [link](https://raw.githubusercontent.com/cealsair/codeone2019/master/Quarking-an-existing-Java-project/TestSecureController.java).
 
-7. Open pom.xml (located at ./Qproj4MP/src/pom.xml) in your favorite editor and add the following dependencies to it (ensure to insert these lines within the <dependencies> block in the pom.xml):
+7. Open pom.xml (located at ./Qproj4MP/src/pom.xml) in your favorite editor and replace the following dependecies:
+```
+<dependency>
+  <groupId>org.bouncycastle</groupId>
+  <artifactId>bcpkix-jdk15on</artifactId>
+  <version>1.53</version>
+</dependency>
+<dependency>
+  <groupId>com.nimbusds</groupId>
+  <artifactId>nimbus-jose-jwt</artifactId>
+  <version>6.7</version>
+</dependency>
+```
+with (ensure these lines within the <dependencies> block in the pom.xml):
 ```
 <dependency>
   <groupId>io.vertx</groupId>
