@@ -23,7 +23,7 @@ In lieu of an existing Java project, we are going to use a Thorntail project exa
 ```  
 7. Enter the following command to generate an empty Quarkus project with all the necessary MicroProfile extensions:
 ```
-  mvn io.quarkus:quarkus-maven-plugin:0.22.0:create \
+  mvn io.quarkus:quarkus-maven-plugin:0.21.2:create \
     -DprojectGroupId=com.example \
     -DprojectArtifactId=demo \
     -Dextensions="smallrye-health, smallrye-metrics, smallrye-openapi, smallrye-fault-tolerance, smallrye-jwt, resteasy, rest-client, resteasy-jsonb"
