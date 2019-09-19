@@ -216,7 +216,7 @@ ClaimValue<String> custom;
 ```
 mkdir src/main/resources/META-INF/resources
 ```
-8. Create the file "src/main/resources/META-INF/resources/privateKey.pem" and paste into it the content from the following [link](https://raw.githubusercontent.com/cealsair/codeone2019/master/Quarking-an-existing-Java-project/publicKey.pem) 
+8. Create the file "src/main/resources/META-INF/resources/publicKey.pem" and paste into it the content from the following [link](https://raw.githubusercontent.com/cealsair/codeone2019/master/Quarking-an-existing-Java-project/publicKey.pem) 
 9. Create the file "src/main/resources/application.properties" and paste the following content into it:
 ```
 quarkus.ssl.native=true
