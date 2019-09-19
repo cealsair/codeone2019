@@ -10,7 +10,7 @@ In lieu of an existing Java project, we are going to use a Thorntail project exa
 2. Change directory to one of your choice (I used $HOME/Downloads)
 3. Enter the following command to generate a sample MicroProfile project for Thorntail
 ```
-  curl -O -J 'https://start.microprofile.io/api/project?supportedServer=THORNTAIL_V2&mpVersion=MP22'
+  curl -O -J 'https://start.microprofile.io/api/project?supportedServer=THORNTAIL_V2&mpVersion=MP30'
 ```
 4. The previous command should download a file name demo.zip to your local directory. Unzip the file. This will create a subdirectory called "demo"
 5. Create a sub-directory called "Qproj4MP" (side-by-side next to the "demo" sub-directory) by entering the following command:
