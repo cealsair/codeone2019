@@ -217,12 +217,20 @@ ClaimValue<String> custom;
 mkdir src/main/resources/META-INF/resources
 ```
 8. Create the file "src/main/resources/META-INF/resources/privateKey.pem" and paste into it the content from the following [link](https://raw.githubusercontent.com/cealsair/codeone2019/master/Quarking-an-existing-Java-project/publicKey.pem) 
-9. At this point, you are ready to build service-b. Enter the following command:
+9. Create the file "src/main/resources/application.properties" and paste the following content into it:
+```
+quarkus.ssl.native=true
+mp.jwt.verify.publickey.location=META-INF/resources/publicKey.pem
+mp.jwt.verify.issuer=https://server.example.com
+quarkus.smallrye-jwt.auth-mechanism=MP-JWT
+quarkus.smallrye-jwt.enabled=true
+```
+10. At this point, you are ready to build service-b. Enter the following command:
 ```
 mvn clean package
 ```
-10. To run the executable JAR for service-b, enter:
+11. To run the executable JAR for service-b, enter:
 ```
 java -Dquarkus.http.port=8180 -jar target/demo-1.0-SNAPSHOT-runner.jar
 ```
-11. At this point, you can try the JWT Propagation option from the web app on http://localhost:8080/index.html to verify that it works.
+12. At this point, you can try the JWT Propagation option from the web app on http://localhost:8080/index.html to verify that it works.
